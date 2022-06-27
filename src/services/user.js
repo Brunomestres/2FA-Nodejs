@@ -27,9 +27,12 @@ const findByEmail = email =>
 const findById = id =>
   User.findOne({ where: { id } })
 
+const addToFASecret = (id, secret) => User.update({ twoFaSecret: secret }, { where: { id } })
+
 module.exports = {
   getUsers,
   createUser,
   findByEmail,
   findById,
+  addToFASecret,
 }
